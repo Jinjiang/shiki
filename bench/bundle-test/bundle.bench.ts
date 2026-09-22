@@ -24,7 +24,8 @@ function notify() {
 `
 
 it('bundle', async ({ bench }) => {
-  await it.compare(
+  // eslint-disable-next-line test/consistent-test-it -- vitest 5: compare lives on the bench fixture
+  await bench.compare(
     bench('js-precompiled', async () => {
       await highlightA(code)
     }),
