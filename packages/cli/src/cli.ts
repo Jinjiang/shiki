@@ -1,5 +1,5 @@
 import type { Readable } from 'node:stream'
-import type { BundledLanguage } from 'shiki'
+import type { BundledLanguage, BundledTheme } from 'shiki'
 import fs from 'node:fs/promises'
 import { parse } from 'node:path'
 import process from 'node:process'
@@ -36,7 +36,7 @@ export function resolveLanguage(lang: string): string {
 async function render(
   content: string,
   lang: string,
-  theme: string,
+  theme: BundledTheme,
   format: string,
 ): Promise<string> {
   const resolved = resolveLanguage(lang) as BundledLanguage
